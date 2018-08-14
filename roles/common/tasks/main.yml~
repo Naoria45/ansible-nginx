@@ -1,0 +1,17 @@
+---
+
+- name: check firewalld is running
+  command: systemctl is-active firewalld
+  register: firewalld_result
+  changed_when: False
+  ignore_errors: True
+
+- name: firewalld open ports
+  firewalld: 
+    permanent: true
+    immediate: true
+    state: enabled
+    service: "{{item}}"
+  with_items:
+    - http
+    - https

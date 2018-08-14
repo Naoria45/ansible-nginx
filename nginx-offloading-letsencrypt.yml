@@ -1,0 +1,8 @@
+---
+
+- hosts: reverseproxy
+  become: yes
+  roles:
+    - common
+    - chrony
+    - nginx
