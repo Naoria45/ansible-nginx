@@ -13,7 +13,13 @@
   ignore_errors: True
 
 - name: install nginx
-  yum: name=nginx state=present enablerepo=nginx
+  yum: 
+    name: nginx 
+    state: present 
+    enablerepo: nginx
 
 - name: Start Nginx
-  service: name=nginx enabled=yes state=started
+  systemd: 
+    name: nginx 
+    enabled: yes 
+    state: started

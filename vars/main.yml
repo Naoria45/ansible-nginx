@@ -1,8 +1,8 @@
 ---
 
 tls_domains:
-  - "*.naokilog.com"
-  - "www.naokilog.com"
+  - example.com
+  - *.example.com
 
 admin_email: admin@mail.example.com
 
