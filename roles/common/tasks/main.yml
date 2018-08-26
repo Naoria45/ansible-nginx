@@ -1,4 +1,20 @@
 ---
+# timezone 
+- name: set timezone to Asia/Tokyo
+  timezone: 
+    name: Asia/Tokyo
+
+# add repository
+- name: add epel repository
+  yum: name={{ item }}
+  with_items:
+    - epel-release
+    
+# disable epel for defoult repository
+- name: disable epel for default
+  replace: dest=/etc/yum.repos.d/{{item}} regexp="enabled *= *1" replace="enabled=0"
+  with_items:
+    - epel.repo
 
 # selinux 
 - name: disable selinux

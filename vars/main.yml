@@ -1,0 +1,14 @@
+---
+
+tls_domains:
+  - "*.naokilog.com"
+  - "www.naokilog.com"
+
+admin_email: admin@mail.example.com
+
+nginx:
+  webroot: /var/www
+  owner: nginx
+  group: nginx
+  listen: /run/php/php7.0-fpm.sock
+  fastcgi_pass: unix:/run/php/php7.0-fpm.sock
